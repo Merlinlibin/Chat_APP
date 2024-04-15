@@ -9,7 +9,7 @@ const ChatProvider = ({ children }) => {
   const navigate = useNavigate();
   const [notification, setNotification] = useState([]);
   const [chats, setChats] = useState();
-  const API_URL="http://localhost:5000/api"
+  const API_URL = "https://chat-app-v9jf.onrender.com/api";
 
   useEffect(() => {
     const userInfo = JSON.parse(localStorage.getItem("userInfo"));
@@ -18,7 +18,6 @@ const ChatProvider = ({ children }) => {
     if (!userInfo) {
       navigate("/");
     }
-    
   }, [navigate]);
 
   return (
