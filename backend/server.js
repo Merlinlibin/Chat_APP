@@ -6,7 +6,7 @@ const connectDB = require("./config/db");
 const userRouter = require("./routes/userRoute");
 const chatRouter = require("./routes/chatRoutes");
 const messageRouter = require("./routes/messageRoutes");
-const { notFound, errorHandler } = require("./middleware/errorMiddleWare");
+// const { notFound, errorHandler } = require("./middleware/errorMiddleWare");
 const path=require('path');
 
 const PORT = process.env.PORT || 300;
@@ -38,8 +38,8 @@ if (process.env.NODE_ENV === "productio") {
 
 // --------------------------deployment------------------------------
 
-app.use(notFound);
-app.use(errorHandler);
+// app.use(notFound);
+// app.use(errorHandler);
 
 const server = app.listen(PORT, async () => {
   console.log("Connectin to server");
