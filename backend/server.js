@@ -7,7 +7,7 @@ const userRouter = require("./routes/userRoute");
 const chatRouter = require("./routes/chatRoutes");
 const messageRouter = require("./routes/messageRoutes");
 // const { notFound, errorHandler } = require("./middleware/errorMiddleWare");
-const path=require('path');
+const path = require("path");
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,8 +18,6 @@ app.use(express.json());
 app.use("/api/user", userRouter);
 app.use("/api/chat", chatRouter);
 app.use("/api/messages", messageRouter);
-
-
 
 // app.use(notFound);
 // app.use(errorHandler);
@@ -33,7 +31,7 @@ const server = app.listen(PORT, async () => {
 const io = require("socket.io")(server, {
   ping: 60000,
   cors: {
-    origin: "https://master--letsconnect-chat.netlify.app/",
+    origin: "https://localhost:5173",
   },
 });
 
