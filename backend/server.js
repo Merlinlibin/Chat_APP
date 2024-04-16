@@ -31,7 +31,7 @@ const server = app.listen(PORT, async () => {
 const io = require("socket.io")(server, {
   ping: 60000,
   cors: {
-    origin: "http://localhost:5173" || "https://letsconnect-chat.netlify.app/",
+    origin: "https://letsconnect-chat.netlify.app/",
   },
 });
 
