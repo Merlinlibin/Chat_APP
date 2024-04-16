@@ -9,7 +9,7 @@ const messageRouter = require("./routes/messageRoutes");
 // const { notFound, errorHandler } = require("./middleware/errorMiddleWare");
 const path=require('path');
 
-const PORT = process.env.PORT || 300;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 app.use(cors());
@@ -33,7 +33,8 @@ const server = app.listen(PORT, async () => {
 const io = require("socket.io")(server, {
   ping: 60000,
   cors: {
-    origin: "http://localhost:5173"},
+    origin: "https://master--letsconnect-chat.netlify.app/",
+  },
 });
 
 io.on("connection", (socket) => {
