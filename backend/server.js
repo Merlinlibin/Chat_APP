@@ -31,7 +31,7 @@ const server = app.listen(PORT, async () => {
 const io = require("socket.io")(server, {
   ping: 60000,
   cors: {
-    origin: "https://localhost:5173",
+    origin: "https://letsconnect-chat.netlify.app/",
   },
 });
 
@@ -50,7 +50,7 @@ io.on("connection", (socket) => {
 
   socket.on("new message", function (newMessageRecieved) {
     var chat = newMessageRecieved.chat;
-    console.log(newMessageRecieved);
+    console.log(newMessageRecieved.content);
 
     if (!chat.users) return console.log("chat.users  not defined!");
     chat.users.forEach((user) => {
